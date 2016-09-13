@@ -88,5 +88,5 @@ js/rs-plugin/js/.DS_Store
 js/vendor/.DS_Store
 php/.DS_Store
 tsv-forstenried.iml
-/assets/js/bower_components/
+/app/assets/js/bower_components/
 assets/js/bower_components/

@@ -3000,7 +3000,7 @@ select, input[type=radio], input[type=checkbox] {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	border-radius: 2px;
-	background: url(assets/img/btn-bg.png) repeat-x 0 0;
+	background: url(app/assets/img/btn-bg.png) repeat-x 0 0;
 }
 
 a.small-btn, input[type=button].small-btn, input[type=submit].small-btn, .widget input[type=submit], ul.toggle li a.small-btn{
