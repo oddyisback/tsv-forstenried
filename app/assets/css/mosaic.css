@@ -93,7 +93,7 @@
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
 	filter:alpha(opacity=00);
 	display:none;
-	background: rgba(0, 0, 0, .4) url(/tsv-forstenried/assets/img/hover-magnify.png) no-repeat center center;
+	background: rgba(0, 0, 0, .4) url(/tsv-forstenried/app/assets/img/hover-magnify.png) no-repeat center center;
 }
 
 .circle .mosaic-overlay.link {

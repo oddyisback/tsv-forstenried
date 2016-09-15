@@ -8,16 +8,70 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
                 templateUrl : 'partials/homepage.html',
                 controller  : 'mainController'
             })
+            .when('/homepage', {
+                templateUrl : 'partials/homepage.html',
+                controller  : 'mainController'
+            })
 
-            // route for the about page
-            .when('/about', {
-                templateUrl : 'pages/about.html',
+            // route for the about galleries
+            .when('/galleries', {
+                templateUrl : 'partials/galleries.html',
                 controller  : 'aboutController'
             })
 
             // route for the contact page
             .when('/contact', {
-                templateUrl : 'pages/contact.html',
+                templateUrl : 'partials/contact3.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 1 page
+            .when('/event-calender-man-1', {
+                templateUrl : 'partials/event-calender-man-1.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 2 page
+            .when('/event-calender-man-2', {
+                templateUrl : 'partials/event-calender-man-2.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 1 page
+            .when('/event-calender-man-3', {
+                templateUrl : 'partials/event-calender-man-3.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 2 page
+            .when('/event-calender-man-4', {
+                templateUrl : 'partials/event-calender-man-4.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 1 page
+            .when('/event-calender-woman-1', {
+                templateUrl : 'partials/event-calender-woman-1.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 2 page
+            .when('/event-calender-u18', {
+                templateUrl : 'partials/event-calender-u18.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 1 page
+            .when('/event-calender-u16', {
+                templateUrl : 'partials/event-calender-u16.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 2 page
+            .when('/event-calender-u14-mix', {
+                templateUrl : 'partials/event-calender-u14-mix.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 1 page
+            .when('/event-calender-u12-mix', {
+                templateUrl : 'partials/event-calender-u12-mix.html',
+                controller  : 'contactController'
+            })
+            // route for the calender for Herren 2 page
+            .when('/event-calender-u10-mix', {
+                templateUrl : 'partials/event-calender-u10-mix.html',
                 controller  : 'contactController'
             });
 
@@ -25,7 +79,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
     //// create the controller and inject Angular's $scope
     .controller('mainController', function($scope) {
         // Load the tp-banner after the ng-view is loaded!
-        $scope.$on('$viewContentLoaded', function(){
+        $scope.$on('$routeChangeSuccess', function(){
                 jQuery('.tp-banner').show().revolution({
                     dottedOverlay:"none",
                     delay:16000,
@@ -104,7 +158,73 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
     })
 
     .controller('aboutController', function($scope) {
-        $scope.message = 'Look! I am an about page.';
+        $scope.$on('$routeChangeSuccess', function() {
+            /*
+             11. ISOTOPE GALLERY ________________________________________________________________ */
+            var $container = $('#thumb-gallery');
+
+            $container.isotope({
+                masonry: {
+                    columnWidth: 1 //was 26
+                },
+                sortBy: 'number',
+                getSortData: {
+                    number: function ($elem) {
+                        var number = $elem.hasClass('element') ?
+                            $elem.find('.number').text() :
+                            $elem.attr('data-number');
+                        return parseInt(number, 10);
+                    },
+                    alphabetical: function ($elem) {
+                        var name = $elem.find('.name'),
+                            itemText = name.length ? name : $elem;
+                        return itemText.text();
+                    }
+                }
+            });
+
+
+            var $optionSets = $('.option-set'),
+                $optionLinks = $optionSets.find('a');
+
+            $optionLinks.click(function () {
+                var $this = $(this);
+                // don't proceed if already selected
+                if ($this.hasClass('selected')) {
+                    return false;
+                }
+                var $optionSet = $this.parents('.option-set');
+                $optionSet.find('.selected').removeClass('selected');
+                $this.addClass('selected');
+
+                // make option object dynamically, i.e. { filter: '.my-filter-class' }
+                var options = {},
+                    key = $optionSet.attr('data-option-key'),
+                    value = $this.attr('data-option-value');
+                // parse 'false' as false boolean
+                value = value === 'false' ? false : value;
+                options[key] = value;
+                if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+                    // changes in layout modes need extra logic
+                    changeLayoutMode($this, options)
+                } else {
+                    // otherwise, apply new options
+                    $container.isotope(options);
+                }
+
+                return false;
+            });
+
+
+            // initialize Isotope after all images have loaded
+            var $container = $('#thumb-gallery').imagesLoaded(function () {
+                $container.isotope({
+                    // options
+                });
+            });
+
+        });
+
     })
 
     .controller('contactController', function($scope) {

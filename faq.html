@@ -134,7 +134,7 @@
 						    			</ul>
 						    		</li>
 						    		
-						    		<li><a href="galleries.html">Our Galleries &nbsp; <em class="fa">&#xf105;</em></a>
+						    		<li><a href="app/partials/galleries.html">Our Galleries &nbsp; <em class="fa">&#xf105;</em></a>
 						    			<ul>
 						    				<li><a href="gallery-1.html">Isotope Gallery</a></li>
 						    				<li><a href="gallery-2.html">Slider Gallery</a></li>
