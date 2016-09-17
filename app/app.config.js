@@ -69,10 +69,42 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
                 templateUrl : 'partials/event-calender-u12-mix.html',
                 controller  : 'contactController'
             })
-            // route for the calender for Herren 2 page
+            // route for the calender for U10 mix page
             .when('/event-calender-u10-mix', {
                 templateUrl : 'partials/event-calender-u10-mix.html',
                 controller  : 'contactController'
+            })
+            // route for the calender for U18 page
+            .when('/about-u18', {
+                templateUrl : 'partials/about-u18.html',
+                controller  : 'about-u18-Controller'
+            })
+            // route for the calender for U16 page
+            .when('/about-u16', {
+                templateUrl : 'partials/about-u16.html',
+                controller  : 'about-u16-Controller'
+            })
+            // route for the calender for U16 page
+            .when('/about-man-1', {
+                templateUrl : 'partials/about-man-1.html',
+                controller  : 'about-man-1-Controller'
+            })
+            // route for the calender for U16 page
+            .when('/about-man-4', {
+                templateUrl : 'partials/about-man-4.html',
+                controller  : 'about-man-4-Controller'
+            })
+            // route for the calender for U16 page
+            .when('/artikel-jetzt-erst-recht', {
+                templateUrl : 'partials/articles/u18/artikel-jetzt-erst-recht.html'
+            })
+            // route for the calender for U16 page
+            .when('/artikel-die-damenmannschaft-sucht-fuer-die-kommende-saison-verstaerkung', {
+                templateUrl : 'partials/articles/damen-1/artikel-die-damenmannschaft-sucht-fuer-die-kommende-saison-verstaerkung.html'
+            })
+            // route for the calender for U16 page
+            .when('/tsv-forstenried-tag-der-offenen-tuer-18-6', {
+                templateUrl : 'partials/articles/u14-mix/tsv-forstenried-tag-der-offenen-tuer-18-6.html'
             });
 
     })
@@ -229,4 +261,475 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
 
     .controller('contactController', function($scope) {
         $scope.message = 'Contact us! JK. This is just a demo.';
+    })
+    .controller('about-u18-Controller', function($scope) {
+        if(!$.omr){
+            $.omr = new Object();
+        };
+
+        $.omr.mosaic = function(el, options){
+
+            var base = this;
+
+            // Access to jQuery and DOM versions of element
+            base.$el = $(el);
+            base.el = el;
+
+            // Add a reverse reference to the DOM object
+            base.$el.data("omr.mosaic", base);
+
+            base.init = function(){
+                base.options = $.extend({},$.omr.mosaic.defaultOptions, options);
+
+                base.load_box();
+            };
+
+            // Preload Images
+            base.load_box = function(){
+                // Hide until window loaded, then fade in
+                if (base.options.preload){
+                    $(base.options.backdrop, base.el).hide();
+                    $(base.options.overlay, base.el).hide();
+
+                    $(window).load(function(){
+                        // IE transparency fade fix
+                        if(base.options.options.animation == 'fade' && $(base.options.overlay, base.el).css('opacity') == 0 ) $(base.options.overlay, base.el).css('filter', 'alpha(opacity=0)');
+
+                        $(base.options.overlay, base.el).fadeIn(200, function(){
+                            $(base.options.backdrop, base.el).fadeIn(200);
+                        });
+
+                        base.allow_hover();
+                    });
+                }else{
+                    $(base.options.backdrop, base.el).show();
+                    $(base.options.overlay , base.el).show();
+                    base.allow_hover();
+                }
+            };
+
+            // Initialize hover animations
+            base.allow_hover = function(){
+                // Select animation
+                switch(base.options.animation){
+
+                    // Handle fade animations
+                    case 'fade':
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, base.options.opacity);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, 0);
+                        });
+
+                        break;
+
+                    // Handle slide animations
+                    case 'slide':
+                        // Grab default overlay x,y position
+                        var startX = $(base.options.overlay, base.el).css(base.options.anchor_x) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_x) : '0px';
+                        var startY = $(base.options.overlay, base.el).css(base.options.anchor_y) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_y) : '0px';;
+
+                        var hoverState = {};
+                        hoverState[base.options.anchor_x] = base.options.hover_x;
+                        hoverState[base.options.anchor_y] = base.options.hover_y;
+
+                        var endState = {};
+                        endState[base.options.anchor_x] = startX;
+                        endState[base.options.anchor_y] = startY;
+
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().animate(hoverState, base.options.speed);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().animate(endState, base.options.speed);
+                        });
+
+                        break;
+                };
+            };
+
+            // Make it go!
+            base.init();
+        };
+
+        $.omr.mosaic.defaultOptions = {
+            animation	: 'fade',
+            speed		: 150,
+            opacity		: 1,
+            preload		: 0,
+            anchor_x	: 'left',
+            anchor_y	: 'bottom',
+            hover_x		: '0px',
+            hover_y		: '0px',
+            overlay  	: '.mosaic-overlay',	//Mosaic overlay
+            backdrop 	: '.mosaic-backdrop'	//Mosaic backdrop
+        };
+
+        $.fn.mosaic = function(options){
+            return this.each(function(){
+                (new $.omr.mosaic(this, options));
+            });
+        };
+    })
+    .controller('about-u16-Controller', function($scope) {
+        if(!$.omr){
+            $.omr = new Object();
+        };
+
+        $.omr.mosaic = function(el, options){
+
+            var base = this;
+
+            // Access to jQuery and DOM versions of element
+            base.$el = $(el);
+            base.el = el;
+
+            // Add a reverse reference to the DOM object
+            base.$el.data("omr.mosaic", base);
+
+            base.init = function(){
+                base.options = $.extend({},$.omr.mosaic.defaultOptions, options);
+
+                base.load_box();
+            };
+
+            // Preload Images
+            base.load_box = function(){
+                // Hide until window loaded, then fade in
+                if (base.options.preload){
+                    $(base.options.backdrop, base.el).hide();
+                    $(base.options.overlay, base.el).hide();
+
+                    $(window).load(function(){
+                        // IE transparency fade fix
+                        if(base.options.options.animation == 'fade' && $(base.options.overlay, base.el).css('opacity') == 0 ) $(base.options.overlay, base.el).css('filter', 'alpha(opacity=0)');
+
+                        $(base.options.overlay, base.el).fadeIn(200, function(){
+                            $(base.options.backdrop, base.el).fadeIn(200);
+                        });
+
+                        base.allow_hover();
+                    });
+                }else{
+                    $(base.options.backdrop, base.el).show();
+                    $(base.options.overlay , base.el).show();
+                    base.allow_hover();
+                }
+            };
+
+            // Initialize hover animations
+            base.allow_hover = function(){
+                // Select animation
+                switch(base.options.animation){
+
+                    // Handle fade animations
+                    case 'fade':
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, base.options.opacity);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, 0);
+                        });
+
+                        break;
+
+                    // Handle slide animations
+                    case 'slide':
+                        // Grab default overlay x,y position
+                        var startX = $(base.options.overlay, base.el).css(base.options.anchor_x) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_x) : '0px';
+                        var startY = $(base.options.overlay, base.el).css(base.options.anchor_y) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_y) : '0px';;
+
+                        var hoverState = {};
+                        hoverState[base.options.anchor_x] = base.options.hover_x;
+                        hoverState[base.options.anchor_y] = base.options.hover_y;
+
+                        var endState = {};
+                        endState[base.options.anchor_x] = startX;
+                        endState[base.options.anchor_y] = startY;
+
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().animate(hoverState, base.options.speed);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().animate(endState, base.options.speed);
+                        });
+
+                        break;
+                };
+            };
+
+            // Make it go!
+            base.init();
+        };
+
+        $.omr.mosaic.defaultOptions = {
+            animation	: 'fade',
+            speed		: 150,
+            opacity		: 1,
+            preload		: 0,
+            anchor_x	: 'left',
+            anchor_y	: 'bottom',
+            hover_x		: '0px',
+            hover_y		: '0px',
+            overlay  	: '.mosaic-overlay',	//Mosaic overlay
+            backdrop 	: '.mosaic-backdrop'	//Mosaic backdrop
+        };
+
+        $.fn.mosaic = function(options){
+            return this.each(function(){
+                (new $.omr.mosaic(this, options));
+            });
+        };
+    })
+    .controller('about-man-1-Controller', function($scope) {
+        if(!$.omr){
+            $.omr = new Object();
+        };
+
+        $.omr.mosaic = function(el, options){
+
+            var base = this;
+
+            // Access to jQuery and DOM versions of element
+            base.$el = $(el);
+            base.el = el;
+
+            // Add a reverse reference to the DOM object
+            base.$el.data("omr.mosaic", base);
+
+            base.init = function(){
+                base.options = $.extend({},$.omr.mosaic.defaultOptions, options);
+
+                base.load_box();
+            };
+
+            // Preload Images
+            base.load_box = function(){
+                // Hide until window loaded, then fade in
+                if (base.options.preload){
+                    $(base.options.backdrop, base.el).hide();
+                    $(base.options.overlay, base.el).hide();
+
+                    $(window).load(function(){
+                        // IE transparency fade fix
+                        if(base.options.options.animation == 'fade' && $(base.options.overlay, base.el).css('opacity') == 0 ) $(base.options.overlay, base.el).css('filter', 'alpha(opacity=0)');
+
+                        $(base.options.overlay, base.el).fadeIn(200, function(){
+                            $(base.options.backdrop, base.el).fadeIn(200);
+                        });
+
+                        base.allow_hover();
+                    });
+                }else{
+                    $(base.options.backdrop, base.el).show();
+                    $(base.options.overlay , base.el).show();
+                    base.allow_hover();
+                }
+            };
+
+            // Initialize hover animations
+            base.allow_hover = function(){
+                // Select animation
+                switch(base.options.animation){
+
+                    // Handle fade animations
+                    case 'fade':
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, base.options.opacity);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, 0);
+                        });
+
+                        break;
+
+                    // Handle slide animations
+                    case 'slide':
+                        // Grab default overlay x,y position
+                        var startX = $(base.options.overlay, base.el).css(base.options.anchor_x) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_x) : '0px';
+                        var startY = $(base.options.overlay, base.el).css(base.options.anchor_y) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_y) : '0px';;
+
+                        var hoverState = {};
+                        hoverState[base.options.anchor_x] = base.options.hover_x;
+                        hoverState[base.options.anchor_y] = base.options.hover_y;
+
+                        var endState = {};
+                        endState[base.options.anchor_x] = startX;
+                        endState[base.options.anchor_y] = startY;
+
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().animate(hoverState, base.options.speed);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().animate(endState, base.options.speed);
+                        });
+
+                        break;
+                };
+            };
+
+            // Make it go!
+            base.init();
+        };
+
+        $.omr.mosaic.defaultOptions = {
+            animation	: 'fade',
+            speed		: 150,
+            opacity		: 1,
+            preload		: 0,
+            anchor_x	: 'left',
+            anchor_y	: 'bottom',
+            hover_x		: '0px',
+            hover_y		: '0px',
+            overlay  	: '.mosaic-overlay',	//Mosaic overlay
+            backdrop 	: '.mosaic-backdrop'	//Mosaic backdrop
+        };
+
+        $.fn.mosaic = function(options){
+            return this.each(function(){
+                (new $.omr.mosaic(this, options));
+            });
+        };
+
+        /*09. MOSAIC STYLES _____________________________________________________________ */
+        $('.circle').mosaic({
+            opacity		:	0.8			//Opacity for overlay (0-1)
+        });
+
+        $('.fade').mosaic();
+
+        $('.bar').mosaic({
+            animation	:	'slide'		//fade or slide
+        });
+
+        $('.bar2').mosaic({
+            animation	:	'slide'		//fade or slide
+        });
+
+        $('.bar3').mosaic({
+            animation	:	'slide',	//fade or slide
+            anchor_y	:	'top'		//Vertical anchor position
+        });
+
+        $('.cover').mosaic({
+            animation	:	'slide',	//fade or slide
+            hover_x		:	'400px'		//Horizontal position on hover
+        });
+
+        $('.cover2').mosaic({
+            animation	:	'slide',	//fade or slide
+            anchor_y	:	'top',		//Vertical anchor position
+            hover_y		:	'80px'		//Vertical position on hover
+        });
+
+        $('.cover3').mosaic({
+            animation	:	'slide',	//fade or slide
+            hover_x		:	'400px',	//Horizontal position on hover
+            hover_y		:	'300px'		//Vertical position on hover
+        });
+
+    })
+    .controller('about-man-4-Controller', function($scope) {
+        if(!$.omr){
+            $.omr = new Object();
+        };
+
+        $.omr.mosaic = function(el, options){
+
+            var base = this;
+
+            // Access to jQuery and DOM versions of element
+            base.$el = $(el);
+            base.el = el;
+
+            // Add a reverse reference to the DOM object
+            base.$el.data("omr.mosaic", base);
+
+            base.init = function(){
+                base.options = $.extend({},$.omr.mosaic.defaultOptions, options);
+
+                base.load_box();
+            };
+
+            // Preload Images
+            base.load_box = function(){
+                // Hide until window loaded, then fade in
+                if (base.options.preload){
+                    $(base.options.backdrop, base.el).hide();
+                    $(base.options.overlay, base.el).hide();
+
+                    $(window).load(function(){
+                        // IE transparency fade fix
+                        if(base.options.options.animation == 'fade' && $(base.options.overlay, base.el).css('opacity') == 0 ) $(base.options.overlay, base.el).css('filter', 'alpha(opacity=0)');
+
+                        $(base.options.overlay, base.el).fadeIn(200, function(){
+                            $(base.options.backdrop, base.el).fadeIn(200);
+                        });
+
+                        base.allow_hover();
+                    });
+                }else{
+                    $(base.options.backdrop, base.el).show();
+                    $(base.options.overlay , base.el).show();
+                    base.allow_hover();
+                }
+            };
+
+            // Initialize hover animations
+            base.allow_hover = function(){
+                // Select animation
+                switch(base.options.animation){
+
+                    // Handle fade animations
+                    case 'fade':
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, base.options.opacity);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().fadeTo(base.options.speed, 0);
+                        });
+
+                        break;
+
+                    // Handle slide animations
+                    case 'slide':
+                        // Grab default overlay x,y position
+                        var startX = $(base.options.overlay, base.el).css(base.options.anchor_x) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_x) : '0px';
+                        var startY = $(base.options.overlay, base.el).css(base.options.anchor_y) != 'auto' ? $(base.options.overlay, base.el).css(base.options.anchor_y) : '0px';;
+
+                        var hoverState = {};
+                        hoverState[base.options.anchor_x] = base.options.hover_x;
+                        hoverState[base.options.anchor_y] = base.options.hover_y;
+
+                        var endState = {};
+                        endState[base.options.anchor_x] = startX;
+                        endState[base.options.anchor_y] = startY;
+
+                        $(base.el).hover(function () {
+                            $(base.options.overlay, base.el).stop().animate(hoverState, base.options.speed);
+                        },function () {
+                            $(base.options.overlay, base.el).stop().animate(endState, base.options.speed);
+                        });
+
+                        break;
+                };
+            };
+
+            // Make it go!
+            base.init();
+        };
+
+        $.omr.mosaic.defaultOptions = {
+            animation	: 'fade',
+            speed		: 150,
+            opacity		: 1,
+            preload		: 0,
+            anchor_x	: 'left',
+            anchor_y	: 'bottom',
+            hover_x		: '0px',
+            hover_y		: '0px',
+            overlay  	: '.mosaic-overlay',	//Mosaic overlay
+            backdrop 	: '.mosaic-backdrop'	//Mosaic backdrop
+        };
+
+        $.fn.mosaic = function(options){
+            return this.each(function(){
+                (new $.omr.mosaic(this, options));
+            });
+        };
     });
+
