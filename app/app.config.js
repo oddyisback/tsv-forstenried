@@ -222,9 +222,9 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
 
                     spinner:"spinner5",
 
-                    stopLoop:"off",
-                    stopAfterLoops:-1,
-                    stopAtSlide:-1,
+                    stopLoop:"on",
+                    stopAfterLoops:0,
+                    stopAtSlide:2,
 
                     shuffle:"off",
 
