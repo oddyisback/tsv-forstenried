@@ -399,6 +399,72 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
                 hover_y		:	'300px'		//Vertical position on hover
             });
 
+            /*
+             11. ISOTOPE GALLERY ________________________________________________________________ */
+            var $container = $('#thumb-gallery');
+
+            $container.isotope({
+                masonry: {
+                    columnWidth: 1 //was 26
+                },
+                sortBy: 'number',
+                getSortData: {
+                    number: function( $elem ) {
+                        var number = $elem.hasClass('element') ?
+                            $elem.find('.number').text() :
+                            $elem.attr('data-number');
+                        return parseInt( number, 10 );
+                    },
+                    alphabetical: function( $elem ) {
+                        var name = $elem.find('.name'),
+                            itemText = name.length ? name : $elem;
+                        return itemText.text();
+                    }
+                }
+            });
+
+
+            var $optionSets = $('.option-set'),
+                $optionLinks = $optionSets.find('a');
+
+            $optionLinks.click(function(){
+                var $this = $(this);
+                // don't proceed if already selected
+                if ( $this.hasClass('selected') ) {
+                    return false;
+                }
+                var $optionSet = $this.parents('.option-set');
+                $optionSet.find('.selected').removeClass('selected');
+                $this.addClass('selected');
+
+                // make option object dynamically, i.e. { filter: '.my-filter-class' }
+                var options = {},
+                    key = $optionSet.attr('data-option-key'),
+                    value = $this.attr('data-option-value');
+                // parse 'false' as false boolean
+                value = value === 'false' ? false : value;
+                options[ key ] = value;
+                if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+                    // changes in layout modes need extra logic
+                    changeLayoutMode( $this, options )
+                } else {
+                    // otherwise, apply new options
+                    $container.isotope( options );
+                }
+
+                return false;
+            });
+
+
+            // initialize Isotope after all images have loaded
+            var $container = $('#thumb-gallery').imagesLoaded( function() {
+                $container.isotope({
+                    // options
+                });
+            });
+
+
+
         });
 
     })
@@ -766,6 +832,8 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
             hover_x		:	'400px',	//Horizontal position on hover
             hover_y		:	'300px'		//Vertical position on hover
         });
+
+
 
     })
     .controller('about-man-4-Controller', function($scope) {
