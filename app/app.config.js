@@ -105,6 +105,65 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
             // route for the calender for U16 page
             .when('/tsv-forstenried-tag-der-offenen-tuer-18-6', {
                 templateUrl : 'partials/articles/u14-mix/tsv-forstenried-tag-der-offenen-tuer-18-6.html'
+            })
+            // route for the calender for U16 page
+            .when('/mitglied-werden', {
+                templateUrl : 'partials/mitglied-werden.html'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-herren-1', {
+                templateUrl : 'partials/galleries/gallery-herren-1.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-herren-1', {
+                templateUrl : 'partials/galleries/gallery-herren-1.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-herren-2', {
+                templateUrl : 'partials/galleries/gallery-herren-2.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-herren-3', {
+                templateUrl : 'partials/galleries/gallery-herren-3.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-herren-4', {
+                templateUrl : 'partials/galleries/gallery-herren-4.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-damen-1', {
+                templateUrl : 'partials/galleries/gallery-damen-1.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-u18', {
+                templateUrl : 'partials/galleries/gallery-u18.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-u16', {
+                templateUrl : 'partials/galleries/gallery-u16.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-u14-mix', {
+                templateUrl : 'partials/galleries/gallery-u14-mix.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-u12-mix', {
+                templateUrl : 'partials/galleries/gallery-u12-mix.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-u10-mix', {
+                templateUrl : 'partials/galleries/gallery-u10-mix.html',
+                controller  : 'galleriesController'
             });
 
     })
