@@ -108,7 +108,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
             })
             // route for the calender for U16 page
             .when('/mitglied-werden', {
-                templateUrl : 'partials/mitglied-werden.html'
+                templateUrl : 'assets/docs/mitglied-werden.html'
             })
             // route for the calender for U16 page
             .when('/gallery-herren-1', {
@@ -164,6 +164,15 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
             .when('/gallery-u10-mix', {
                 templateUrl : 'partials/galleries/gallery-u10-mix.html',
                 controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/faq', {
+                templateUrl : 'partials/faq.html',
+                controller: 'faqController'
+            })
+            // route for the calender for U16 page
+            .when('/aufnahmeantrag', {
+                templateUrl : 'assets/docs/aufnahmeantrag.pdf'
             });
 
     })
@@ -522,7 +531,27 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
                 });
             });
 
+            // select the .head elements, and bind an event handler to them
+            $('.toggle-btn').click(function(e){
 
+                // prevent the default action of the click event
+                // ie. prevent the browser from redirecting to the link's href
+                e.preventDefault();
+
+                // 'this' is the execution context of the event handler
+                // it refers to the clicked .head element
+                $(this)
+
+                // Walk up the DOM tree to find the closest list item
+                // It is the closest shared ancestor of both .head and .content
+                    .closest('li')
+
+                    // Search the list item for .content
+                    .find('.toggle-content')
+
+                    // Trigger the sliding animation on .content
+                    .slideToggle();
+            });
 
         });
 
@@ -530,6 +559,29 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider) {
 
     .controller('contactController', function($scope) {
         $scope.message = 'Contact us! JK. This is just a demo.';
+    })
+    .controller('faqController', function($scope) {
+        // select the .head elements, and bind an event handler to them
+        $('.toggle-btn').click(function(e){
+
+            // prevent the default action of the click event
+            // ie. prevent the browser from redirecting to the link's href
+            e.preventDefault();
+
+            // 'this' is the execution context of the event handler
+            // it refers to the clicked .head element
+            $(this)
+
+            // Walk up the DOM tree to find the closest list item
+            // It is the closest shared ancestor of both .head and .content
+                .closest('li')
+
+                // Search the list item for .content
+                .find('.toggle-content')
+
+                // Trigger the sliding animation on .content
+                .slideToggle();
+        });
     })
     .controller('about-u18-Controller', function($scope) {
         if(!$.omr){
