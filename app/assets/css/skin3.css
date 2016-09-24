@@ -923,6 +923,6 @@ h6.meta, .meta h6, .corner, .date, .reply {
 
 a[href$=".pdf"]:after
 {
-    content: url(/tsv-forstenried/app/assets/img/file-pdf-download-icon.png);
+    content: url(./assets/img/file-pdf-download-icon.png);
     padding-left:2px;
 }
