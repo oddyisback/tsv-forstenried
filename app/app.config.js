@@ -230,6 +230,9 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 $('#sidr-id-closebtn').click(function() {
                     $.sidr('close', 'sidr-main');
                 });
+                $('#about-man-1').click(function() {
+                    $.sidr('close', 'sidr-main');
+                });
 
 
 
