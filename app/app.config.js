@@ -178,6 +178,11 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
             .when('/aufnahmeantrag', {
                 templateUrl : 'assets/docs/aufnahmeantrag.pdf'
             })
+            // route for the calender for U16 page
+            .when('/sponsors', {
+                templateUrl : 'partials/sponsors.html',
+                controller  : 'about-controller'
+            })
             .otherwise({
                 redirectTo: '/'
             });
