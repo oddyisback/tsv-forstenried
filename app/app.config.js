@@ -19,6 +19,11 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 templateUrl : 'partials/galleries.html',
                 controller  : 'galleriesController'
             })
+            // route for the about galleries
+            .when('/galleries-4', {
+                templateUrl : 'partials/gallery-4.html',
+                controller  : 'galleriesController'
+            })
             // route for the contact page
             .when('/contact', {
                 templateUrl : 'partials/contact3.html',
@@ -120,8 +125,13 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
-            .when('/gallery-herren-1', {
-                templateUrl : 'partials/galleries/gallery-herren-1.html',
+            .when('/gallery-4-herren-1', {
+                templateUrl : 'partials/galleries/gallery-4-herren-1.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-4-herren-2', {
+                templateUrl : 'partials/galleries/gallery-4-herren-2.html',
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
@@ -130,8 +140,18 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
+            .when('/gallery-4-herren-3', {
+                templateUrl : 'partials/galleries/gallery-4-herren-3.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
             .when('/gallery-herren-3', {
                 templateUrl : 'partials/galleries/gallery-herren-3.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-4-herren-4', {
+                templateUrl : 'partials/galleries/gallery-4-herren-4.html',
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
@@ -145,8 +165,23 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
+            .when('/gallery-4-damen-1', {
+                templateUrl : 'partials/galleries/gallery-4-damen-1.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-4-u18', {
+                templateUrl : 'partials/galleries/gallery-4-u18.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
             .when('/gallery-u18', {
                 templateUrl : 'partials/galleries/gallery-u18.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-4-u16', {
+                templateUrl : 'partials/galleries/gallery-4-u16.html',
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
@@ -155,13 +190,28 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
+            .when('/gallery-4-u14-mix', {
+                templateUrl : 'partials/galleries/gallery-4-u14-mix.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
             .when('/gallery-u14-mix', {
                 templateUrl : 'partials/galleries/gallery-u14-mix.html',
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
+            .when('/gallery-4-u12-mix', {
+                templateUrl : 'partials/galleries/gallery-4-u12-mix.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
             .when('/gallery-u12-mix', {
                 templateUrl : 'partials/galleries/gallery-u12-mix.html',
+                controller  : 'galleriesController'
+            })
+            // route for the calender for U16 page
+            .when('/gallery-4-u10-mix', {
+                templateUrl : 'partials/galleries/gallery-4-u10-mix.html',
                 controller  : 'galleriesController'
             })
             // route for the calender for U16 page
