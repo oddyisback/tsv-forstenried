@@ -238,6 +238,16 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 templateUrl : 'partials/articles/damen-1/season-anfang.html',
                 controller  : 'about-controller'
             })
+            // route for the calender for U16 page
+            .when('/basketball-u16-kreisliga', {
+                templateUrl : 'partials/articles/u16/basketball-u16-kreisliga.html',
+                controller  : 'about-controller'
+            })
+            // route for the calender for U16 page
+            .when('/pretty-flamingos', {
+                templateUrl : 'partials/articles/herren-4/pretty-flamingos.html',
+                controller  : 'about-controller'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -623,7 +633,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 /*
                  16. COUNTDOWNS ________________________________________________________________ */
 
-                var endDate = "October 9, 2016 17:00:00";
+                var endDate = "October 16, 2016 19:00:00";
 
                 $('.countdown.simple').countdown({ date: endDate });
 
@@ -700,7 +710,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
 
                 stopLoop:"on",
                 stopAfterLoops:0,
-                stopAtSlide:2,
+                stopAtSlide:4,
 
                 shuffle:"off",
 
