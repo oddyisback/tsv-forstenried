@@ -248,6 +248,21 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 templateUrl : 'partials/articles/herren-4/pretty-flamingos.html',
                 controller  : 'about-controller'
             })
+            // route for the calender for U16 page
+            .when('/article-die-herren-1-nimmt-sich-hohe-ziele-vor', {
+                templateUrl : 'partials/articles/herren-1/article-die-herren-1-nimmt-sich-hohe-ziele-vor.html',
+                controller  : 'about-controller'
+            })
+            // route for the calender for U16 page
+            .when('/article-saisonstart-in-die-bezirksliga', {
+                templateUrl : 'partials/articles/u18/article-saisonstart-in-die-bezirksliga.html',
+                controller  : 'about-controller'
+            })
+            // route for the calender for U16 page
+            .when('/tsv-forstenried-ts-jahn-muenchen-2', {
+                templateUrl : 'partials/articles/u18/tsv-forstenried-ts-jahn-muenchen-2.html',
+                controller  : 'about-controller'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -633,7 +648,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 /*
                  16. COUNTDOWNS ________________________________________________________________ */
 
-                var endDate = "October 16, 2016 19:00:00";
+                var endDate = "October 23, 2016 17:00:00";
 
                 $('.countdown.simple').countdown({ date: endDate });
 
