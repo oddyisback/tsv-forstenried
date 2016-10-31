@@ -263,6 +263,16 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 templateUrl : 'partials/articles/u18/tsv-forstenried-ts-jahn-muenchen-2.html',
                 controller  : 'about-controller'
             })
+            // route for the calender for U16 page
+            .when('/tsv-jahn-freising-tsv-forstenried', {
+                templateUrl : 'partials/articles/u18/tsv-jahn-freising-tsv-forstenried.html',
+                controller  : 'about-controller'
+            })
+            // route for the calender for U16 page
+            .when('/tsv-unterhaching-tsv-forstenried', {
+                templateUrl : 'partials/articles/u18/tsv-unterhaching-tsv-forstenried.html',
+                controller  : 'about-controller'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -648,7 +658,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 /*
                  16. COUNTDOWNS ________________________________________________________________ */
 
-                var endDate = "October 23, 2016 17:00:00";
+                var endDate = "November 14, 2016 17:00:00";
 
                 $('.countdown.simple').countdown({ date: endDate });
 
