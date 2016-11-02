@@ -381,9 +381,15 @@
 	<script type="text/javascript" src="assets/js/bower_components/angular-route/angular-route.min.js"></script>
 
 
-	<!-- App libs -->
+	<!-- Modules scripts -->
 	<script type="text/javascript" src="app.module.js"></script>
+	<script type="text/javascript" src="app.module.router.js"></script>
+
+	<!-- Config scripts -->
 	<script type="text/javascript" src="app.config.js"></script>
+	<script type="text/javascript" src="app.config.router.js"></script>
+
+
 
 
 
@@ -396,6 +402,21 @@
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
         ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyA3GP2NtnqnDTCydCwxDBkMryKW34SwS4M",
+			authDomain: "tsv-forstenried.firebaseapp.com",
+			databaseURL: "https://tsv-forstenried.firebaseio.com",
+			storageBucket: "tsv-forstenried.appspot.com",
+			messagingSenderId: "609163032697"
+		};
+		firebase.initializeApp(config);
+		window.onload = function() {
+			window.friendlyChat = new BasketballClub();
+		};
+	</script>
 
 
     </body>
