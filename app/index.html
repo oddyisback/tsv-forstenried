@@ -254,6 +254,8 @@
     	</div>
 	</div>
 
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 	<!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a
              custom directive -->
 	<ng-view></ng-view>
@@ -382,12 +384,16 @@
 
 
 	<!-- Modules scripts -->
-	<script type="text/javascript" src="app.module.js"></script>
-	<script type="text/javascript" src="app.module.router.js"></script>
+	<script type="text/javascript" src="scripts/app.module.js"></script>
+	<script type="text/javascript" src="scripts/app.module.controller.js"></script>
+	<script type="text/javascript" src="scripts/app.controller.js"></script>
+	<script type="text/javascript" src="scripts/app.factory.module.js"></script>
+	<script type="text/javascript" src="scripts/app.factory.js"></script>
 
 	<!-- Config scripts -->
-	<script type="text/javascript" src="app.config.js"></script>
-	<script type="text/javascript" src="app.config.router.js"></script>
+	<script type="text/javascript" src="scripts/app.module.router.js"></script>
+	<script type="text/javascript" src="scripts/app.config.router.js"></script>
+	<script type="text/javascript" src="scripts/app.config.js"></script>
 
 
 
