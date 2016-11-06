@@ -55,7 +55,8 @@
 
         <link rel="stylesheet" type="text/css" href="assets/css/skin3.css"> <!-- change to skin2.css for other skin -->
         <link rel="stylesheet" type="text/css" href="assets/css/full.css"> <!-- change to boxed.css for boxed style -->
-
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 
 		<!-- Scripts -->
         <script src="assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -77,12 +78,12 @@
 
 			<div class="pre-header-right right">
 				<!-- Second Nav -->
-				<ul>
-					<li><a href="#homepage">Home</a></li>
-					<li><a href="../sitemap.html">Pages</a></li>
-					<!--<li><a href="../styles.html">Typography</a></li>-->
-				</ul>
+						<span id="customBtn" class="btn btn-block bootstrapt-btn-social btn-google right">
+							<span class="fa fa-google"></span>
+							Anmeldung mit Google
+						</span>
 			</div>
+
 
 		</div>
 	</div>
@@ -376,6 +377,7 @@
 	<script type="text/javascript" src="assets/js/slider-2.js"></script>
 
     <script type="text/javascript" src="assets/js/main.js"></script>
+	<script src="https://apis.google.com/js/api:client.js"></script>
 
 
 	<!-- Load jQuery -->
@@ -397,7 +399,34 @@
 
 
 
+	<script>
+		var googleUser = {};
+		var startApp = function() {
+			gapi.load('auth2', function(){
+				// Retrieve the singleton for the GoogleAuth library and set up the client.
+				auth2 = gapi.auth2.init({
+					client_id: '609163032697-1pv0e5g72ggsh547sp1o19uo1b67f5vb.apps.googleusercontent.com',
+					cookiepolicy: 'single_host_origin',
+					// Request scopes in addition to 'profile' and 'email'
+					//scope: 'additional_scope'
+				});
+				attachSignin(document.getElementById('customBtn'));
+			});
+		};
 
+		function attachSignin(element) {
+			console.log(element.id);
+			auth2.attachClickHandler(element, {},
+					function(googleUser) {
+						document.getElementById('name').innerText = "Signed in: " +
+								googleUser.getBasicProfile().getName();
+					}, function(error) {
+						alert(JSON.stringify(error, undefined, 2));
+					});
+		}
+	</script>
+
+	<script>startApp();</script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
