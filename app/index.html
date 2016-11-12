@@ -424,6 +424,25 @@
 						alert(JSON.stringify(error, undefined, 2));
 					});
 		}
+
+		var app = angular.module("sampleApp", ["firebase"]);
+
+		app.factory("Auth", ["$firebaseAuth",
+			function($firebaseAuth) {
+				return $firebaseAuth();
+			}
+		]);
+
+		app.controller("SampleCtrl", ["$scope", "Auth",
+			function($scope, Auth) {
+				$scope.auth = Auth;
+
+				// any time auth state changes, add the user data to scope
+				$scope.auth.$onAuthStateChanged(function(firebaseUser) {
+					$scope.firebaseUser = firebaseUser;
+				});
+			}
+		]);
 	</script>
 
 	<script>startApp();</script>
