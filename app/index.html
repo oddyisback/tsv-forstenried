@@ -82,12 +82,12 @@
       </ul>
     </div>
 
-    <div class="pre-header-right right" ng-controller="about-controller">
+    <div class="pre-header-right right">
       <!-- Second Nav -->
-      {{vm.emailAddress}}
-      {{emailAddress}}
-      {{$scope.emailAddress}}
-      <a class="big_black" href="#login">&nbsp; <em class="fa">&#xf105;</em> Bei der TSV Forstenried Webseite einloggen</a>
+
+      <span ng-hide="emailLogin">Hallo {{welcomeMsg}}</span>
+      <span ng-show="emailLogin">Hallo {{emailLogin}}</span>
+      <a class="big_black" href="#login" ng-hide="emailLogin">&nbsp; <em class="fa">&#xf105;</em> Bei der TSV Forstenried Webseite einloggen</a>
     </div>
 
 

@@ -5,11 +5,9 @@
   'use strict';
   angular
     .module('config.router')
-    .config(configFunction)
-    .run(runFunction);
+    .config(configFunction);
 
   configFunction.$inject = ['$routeProvider'];
-  runFunction.$inject = ['authService'];
 
   function configFunction($routeProvider) {
     $routeProvider
@@ -284,11 +282,6 @@
         redirectTo: '/'
       });
 
-  }
-
-  function runFunction(authService) {
-    //this.emailAddress = "Hello";
-    //alert ("hello");
   }
 
 

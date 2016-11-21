@@ -22,10 +22,11 @@
       });
   }
 
-  runFunction.$inject = ['$location', 'authService'];
+  runFunction.$inject = ['$location', 'authService', '$rootScope'];
 
-  function runFunction($location, authService) {
+  function runFunction($location, authService, $rootScope) {
 
+    $rootScope.welcomeMsg= "Gast";
     authService.firebaseAuthObject.$onAuthStateChanged(function (authData) {
       if (!authData) {
         authService.logout();

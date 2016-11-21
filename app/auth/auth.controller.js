@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['$location', 'authService'];
+  AuthController.$inject = ['$location', 'authService', '$rootScope'];
 
-  function AuthController($location, authService) {
+  function AuthController($location, authService,$rootScope) {
     var vm = this;
 
     vm.error = null;
@@ -31,6 +31,7 @@
     function login(user) {
       return authService.login(user)
         .then(function() {
+          $rootScope.emailLogin = user.email;
           $location.path('/ĥomepage');
         })
         .catch(function(error) {
