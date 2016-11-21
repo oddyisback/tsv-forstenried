@@ -7,9 +7,12 @@
         .module('basketClubApp', [
             // Angular modules.
             'ngRoute',
+            'firebase',
             // Custom modules.
             'config.router',
             'controller.module',
-            'factory.module'
+            'factory.module',
+            'app.core',
+            'app.auth'
         ])
 })();
