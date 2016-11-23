@@ -668,7 +668,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 /*
                  16. COUNTDOWNS ________________________________________________________________ */
 
-                var endDate = "November 14, 2016 17:00:00";
+                var endDate = "November 27, 2016 17:00:00";
 
                 $('.countdown.simple').countdown({ date: endDate });
 
