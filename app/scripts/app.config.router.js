@@ -11,6 +11,11 @@
 
   function configFunction($routeProvider) {
     $routeProvider
+      .when('/loginGeneral', {
+        templateUrl: '../partials/login/login.view.html',
+        controller: 'LoginController',
+        controllerAs: 'vm'
+      })
       .when('/', {
         templateUrl: '../partials/homepage.html',
         controller: 'mainController'

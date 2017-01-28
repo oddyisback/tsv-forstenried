@@ -11,7 +11,8 @@
     .controller('galleriesController', galleriesController)
     .controller('contactController', contactController)
     .controller('faqController', faqController)
-    .controller('about-controller', aboutController);
+    .controller('about-controller', aboutController)
+    .controller('LoginController', loginController);
 
 
   mainController.$inject = ['$scope', 'ApplicationService'];
@@ -19,6 +20,31 @@
   contactController.$inject = ['$scope'];
   aboutController.$inject = ['ApplicationService'];
 
+  loginController.$inject = ['$location', 'AuthenticationService', 'FlashService'];
+
+  function loginController($location, AuthenticationService, FlashService) {
+    var vm = this;
+
+    vm.login = login;
+
+    (function initController() {
+      // reset login status
+      AuthenticationService.ClearCredentials();
+    })();
+
+    function login() {
+      vm.dataLoading = true;
+      AuthenticationService.Login(vm.username, vm.password, function (response) {
+        if (response.success) {
+          AuthenticationService.SetCredentials(vm.username, vm.password);
+          $location.path('/');
+        } else {
+          FlashService.Error(response.message);
+          vm.dataLoading = false;
+        }
+      });
+    };
+  }
   function mainController($scope, ApplicationService) {
     // Load the tp-banner after the ng-view is loaded!
     $scope.$on('$routeChangeSuccess', function () {

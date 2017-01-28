@@ -13,6 +13,10 @@
             'controller.module',
             'factory.module',
             'app.core',
+            'auth.service',
+            'flash.service',
+            'user.service',
+            'user.local.service',
             'app.auth'
         ])
 })();
