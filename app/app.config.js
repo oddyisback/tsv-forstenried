@@ -298,6 +298,22 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
               templateUrl : 'partials/articles/u18/muenchen-basket-tsv-forstenried.html',
               controller  : 'about-controller'
             })
+            // route for the christmas event
+            .when('/weihnachtsfeier-im-intermezzo-2017', {
+              templateUrl : 'partials/weihnachtsfeier-im-intermezzo-2017.html',
+              controller  : 'about-controller'
+            })
+            // route for u16 third place won
+            .when('/u16-hat-dritten-platz-erarbeitet', {
+              templateUrl : 'partials/articles/u16/u16-hat-dritten-platz-erarbeitet.html',
+              controller  : 'about-controller'
+            })
+            // route for u16 third place won
+            .when('/bezirksliga–geht-noch-mehr', {
+              templateUrl : 'partials/articles/u18/bezirksliga–geht-noch-mehr.html',
+              controller  : 'about-controller'
+            })
+
             .otherwise({
                 redirectTo: '/'
             });
