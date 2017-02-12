@@ -313,6 +313,11 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
               templateUrl : 'partials/articles/u18/bezirksliga–geht-noch-mehr.html',
               controller  : 'about-controller'
             })
+            // route for damen
+            .when('/basketball-damen-im-aufwind', {
+              templateUrl : 'partials/articles/damen-1/basketball-damen-im-aufwind.html',
+              controller  : 'about-controller'
+            })
 
             .otherwise({
                 redirectTo: '/'
