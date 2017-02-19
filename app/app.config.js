@@ -318,6 +318,11 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
               templateUrl : 'partials/articles/damen-1/basketball-damen-im-aufwind.html',
               controller  : 'about-controller'
             })
+            // route for u18 tsv-wasserburg-tsv-forstenried
+            .when('/tsv-wasserburg-tsv-forstenried', {
+              templateUrl : 'partials/articles/u18/tsv-wasserburg-tsv-forstenried.html',
+              controller  : 'about-controller'
+            })
 
             .otherwise({
                 redirectTo: '/'
