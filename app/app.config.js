@@ -283,6 +283,52 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 templateUrl : 'partials/articles/u18/tsv-forstenried–tsv-wasserburg.html',
                 controller  : 'about-controller'
             })
+            // route for the calender for U16 page
+            .when('/tsv-forstenried-tsv-unterhaching', {
+              templateUrl : 'partials/articles/u18/tsv-forstenried-tsv-unterhaching.html',
+              controller  : 'about-controller'
+            })
+            // route for the calender for U16 page
+            .when('/ts-jahn-muenchen-2-tsv-forstenried', {
+              templateUrl : 'partials/articles/u18/ts-jahn-muenchen-2-tsv-forstenried.html',
+              controller  : 'about-controller'
+            })
+            // route for the calender for U16 page
+            .when('/muenchen-basket-tsv-forstenried', {
+              templateUrl : 'partials/articles/u18/muenchen-basket-tsv-forstenried.html',
+              controller  : 'about-controller'
+            })
+            // route for the christmas event
+            .when('/weihnachtsfeier-im-intermezzo-2017', {
+              templateUrl : 'partials/weihnachtsfeier-im-intermezzo-2017.html',
+              controller  : 'about-controller'
+            })
+            // route for u16 third place won
+            .when('/u16-hat-dritten-platz-erarbeitet', {
+              templateUrl : 'partials/articles/u16/u16-hat-dritten-platz-erarbeitet.html',
+              controller  : 'about-controller'
+            })
+            // route for u16 third place won
+            .when('/bezirksliga–geht-noch-mehr', {
+              templateUrl : 'partials/articles/u18/bezirksliga–geht-noch-mehr.html',
+              controller  : 'about-controller'
+            })
+            // route for damen
+            .when('/basketball-damen-im-aufwind', {
+              templateUrl : 'partials/articles/damen-1/basketball-damen-im-aufwind.html',
+              controller  : 'about-controller'
+            })
+            // route for u18 tsv-wasserburg-tsv-forstenried
+            .when('/tsv-wasserburg-tsv-forstenried', {
+              templateUrl : 'partials/articles/u18/tsv-wasserburg-tsv-forstenried.html',
+              controller  : 'about-controller'
+            })
+            // route for u18 tsv-forstenried-tsv-utting
+            .when('/tsv-forstenried-tsv-utting', {
+              templateUrl : 'partials/articles/u18/tsv-forstenried-tsv-utting.html',
+              controller  : 'about-controller'
+            })
+
             .otherwise({
                 redirectTo: '/'
             });
@@ -668,7 +714,7 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
                 /*
                  16. COUNTDOWNS ________________________________________________________________ */
 
-                var endDate = "January 22, 2017 17:00:00";
+                var endDate = "Febraury 19, 2017 17:00:00";
 
                 $('.countdown.simple').countdown({ date: endDate });
 
