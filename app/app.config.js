@@ -323,6 +323,11 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
               templateUrl : 'partials/articles/u18/tsv-wasserburg-tsv-forstenried.html',
               controller  : 'about-controller'
             })
+            // route for u18 tsv-forstenried-tsv-utting
+            .when('/tsv-forstenried-tsv-utting', {
+              templateUrl : 'partials/articles/u18/tsv-forstenried-tsv-utting.html',
+              controller  : 'about-controller'
+            })
 
             .otherwise({
                 redirectTo: '/'
