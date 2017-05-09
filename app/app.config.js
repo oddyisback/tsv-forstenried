@@ -323,12 +323,26 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
               templateUrl : 'partials/articles/u18/tsv-wasserburg-tsv-forstenried.html',
               controller  : 'about-controller'
             })
-            // route for u18 tsv-forstenried-tsv-utting
-            .when('/tsv-forstenried-tsv-utting', {
-              templateUrl : 'partials/articles/u18/tsv-forstenried-tsv-utting.html',
+            // route for u18 bezirkliga-saisonabschluss
+            .when('/bezirkliga-saisonabschluss', {
+              templateUrl : 'partials/articles/u18/bezirkliga-saisonabschluss.html',
               controller  : 'about-controller'
             })
-
+            // route for u18 eastercup-moabit-in-berlin
+            .when('/eastercup-moabit-in-berlin', {
+              templateUrl : 'partials/articles/u18/eastercup-moabit-in-berlin.html',
+              controller  : 'about-controller'
+            })
+            // route for u16 tolle-platzierung-in-der-tabelle
+            .when('/tolle-platzierung-in-der-tabelle', {
+              templateUrl : 'partials/articles/u16/tolle-platzierung-in-der-tabelle.html',
+              controller  : 'about-controller'
+            })
+            // route for nachwuchstreffen-der-basketballer
+            .when('/nachwuchstreffen-der-basketballer', {
+              templateUrl : 'partials/articles/nachwuchstreffen-der-basketballer.html',
+              controller  : 'about-controller'
+            })
             .otherwise({
                 redirectTo: '/'
             });
