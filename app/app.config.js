@@ -342,6 +342,10 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
             .when('/nachwuchstreffen-der-basketballer', {
               templateUrl : 'partials/articles/nachwuchstreffen-der-basketballer.html',
               controller  : 'about-controller'
+            })// route for turniersieg-in-mammendorf
+            .when('/turniersieg-in-mammendorf', {
+              templateUrl : 'partials/articles/u18/turniersieg-in-mammendorf.html',
+              controller  : 'about-controller'
             })
             .otherwise({
                 redirectTo: '/'
