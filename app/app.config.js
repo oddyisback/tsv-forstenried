@@ -346,6 +346,10 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
             .when('/turniersieg-in-mammendorf', {
               templateUrl : 'partials/articles/u18/turniersieg-in-mammendorf.html',
               controller  : 'about-controller'
+            })// route for qualifikation-zur-bezirksliga-zu-haus-und-am-in-neuoetting
+            .when('/qualifikation-zur-bezirksliga-zu-haus-und-am-in-neuoetting', {
+              templateUrl : 'partials/articles/u18/qualifikation-zur-bezirksliga-zu-haus-und-am-in-neuoetting.html',
+              controller  : 'about-controller'
             })
             .otherwise({
                 redirectTo: '/'
