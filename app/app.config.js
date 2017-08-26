@@ -351,6 +351,10 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
               templateUrl : 'partials/articles/u18/qualifikation-zur-bezirksliga-zu-haus-und-am-in-neuoetting.html',
               controller  : 'about-controller'
             })
+            .when('/auf-ein-neues', {
+              templateUrl : 'partials/articles/herren-2/auf-ein-neues.html',
+              controller  : 'about-controller'
+            })
             .otherwise({
                 redirectTo: '/'
             });
