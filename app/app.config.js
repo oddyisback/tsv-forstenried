@@ -355,6 +355,10 @@ angular.module('basketClubApp',  ['ngRoute']).config(function($routeProvider, $l
               templateUrl : 'partials/articles/herren-2/auf-ein-neues.html',
               controller  : 'about-controller'
             })
+            .when('/oberbayerische-ue40-meisterschaft-und-die-erwartungen', {
+              templateUrl : 'partials/articles/damen-1/oberbayerische-ue40-meisterschaft-und-die-erwartungen.html',
+              controller  : 'about-controller'
+            })
             .otherwise({
                 redirectTo: '/'
             });
