@@ -40,3 +40,10 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+tsv-forstenried-upgrade.iml
+/app/assets/js/bower_components/
+assets/js/bower_components/
+node_modules/
+codeStyleSettings.xml
+src/app/assets/js/bower_components/
